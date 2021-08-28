@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Agregar un Programa{% endblock %}
+{% block encabezado %}Agregar un Programa{% endblock %}
+
+{% block contenido %}
+    <div class="container-fluid col-5 mt-5">
+
+        <div class="mb-3">
+            <form action="/add_show/" method="POST">
+                {% csrf_token %}
+                <label for="titulo" class="form-label">Título</label>
+                <input type="text" class="form-control" id="titulo" name="title" placeholder="Title">
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <label for="cadena" class="form-label">Cadena Televisiva</label>
+                <input type="text" class="form-control" id="network" name="network" placeholder="Network">
+            </div>
+
+            <div class="col-6">
+                <label for="cadena" class="form-label">Fecha de Lanzamiento</label>
+                <input type="date" class="form-control" id="release" name="release_date" placeholder="release-date">
+            </div>
+
+            <div class="col mt-4">
+                <label for="descripcion" class="form-label">Descripción</label>
+                <textarea class="form-control" id="descripcion" name="description" rows="3"
+                    placeholder="Yes, there is a description"></textarea>
+            </div>
+
+            <div class="row g-3 mt-4">
+                <div class="col-4"></div>
+                <div class="col-4 ms-4"><button type="submit" class="btn btn-primary">Crear Programa</button></div>
+                <div class="col-4"></div>
+            </div>
+        </div>
+
+        </form>
+{% endblock %}

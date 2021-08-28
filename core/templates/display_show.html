@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}{{da_show.title}}{% endblock %}
+{% block contenido %}
+<div class="text-center mt-5">
+    <h1>TV Show No. {{da_show.id}}: {{da_show.title}}</h1>
+</div>
+<div class="container-fluid mt-5">
+    <div class="col-sm-12 col-lg-6 offset-lg-3">
+        <h3>Cadena Televisiva</h3>
+        <div class="col-sm-12 col-lg-6 offset-lg-3 mt-3">
+            <h4>{{da_show.network}}</h4>
+        </div>
+    </div>
+    <div class="col-sm-12 col-lg-6 offset-lg-3 mt-5">
+        <h3>Fecha de Lanzamiento</h3>
+        <div class="col-sm-12 col-lg-6 offset-lg-3 mt-3">
+            <h4>{{da_show.release_date}}</h4>
+        </div>
+    </div>
+    <div class="col-sm-12 col-lg-6 offset-lg-3 mt-5">
+        <h3>Resumen</h3>
+        <div class="col-sm-12 col-lg-6 offset-lg-3 mt-3">
+            <h5>{{da_show.description}}</h5>
+        </div>
+    </div>
+    <div class="text-center mt-5">
+        <button type="button" class="btn btn-primary ms-"> <a href="/add_show" class="text-decoration-none text-white">
+                Editar Serie </a></button>
+        <button type="button" class="btn btn-primary"> <a href="/add_show" class="text-decoration-none text-white">
+                Eliminar Serie </a></button>
+    </div>
+</div>
+{% endblock %}

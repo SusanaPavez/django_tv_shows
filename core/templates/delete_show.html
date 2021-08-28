@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Delete Show{% endblock %}
+
+{% block encabezado %}Delete TV Show N° {{id}}{% endblock %}
+
+{% block contenido %}
+
+<div class="text-center mt-5"><h4>Seguro quieres borrar?</h4></div>
+
+
+<form action="/delete_show/" method="POST">
+<div class="row g-3 mt-5">
+    <div class="col-2"></div>
+    {% for s in shows %}
+    <div class="col-3"><button type="submit" class="btn btn-primary" text-decoration="none">Volver a Programa </a></button></div>
+    <div class="col-3"><button type="submit" class="btn btn-primary" text-decoration="none">Volver a Shows </a></button></div>
+    <div class="col-3"><button type="submit" class="btn btn-primary"> <a href="{{s.id}}/delete_show">Borrar Programa</a></button></div>
+    </form>
+{% endfor %}
+</div>
+
+{% endblock %}
